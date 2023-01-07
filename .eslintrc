@@ -1,0 +1,42 @@
+{
+  // корень - корень проекта
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    // разрешим пустые функции
+    "no-empty-function": "off",
+    // разрешим в качестве объектов использовать {} или Object (что проще Record<string и что-то еще>
+    "@typescript-eslint/ban-types": "off",
+    // иногда могут понадобится висящие next функции
+    "@typescript-eslint/no-unused-vars": [
+      "off"
+    ],
+    "@typescript-eslint/no-explicit-any": "off",
+      // явно указываем у функций что они возвращают
+    "@typescript-eslint/explicit-function-return-type": [
+      "warn"
+    ],
+    // настойки prettier
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "trailingComma": "all",
+        "useTabs": true,
+        "semi": true,
+        "bracketSpacing": true,
+        "printWidth": 100,
+        "endOfLine": "auto"
+      }
+    ]
+  }
+}
